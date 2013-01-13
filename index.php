@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 /**
  * Front to the WordPress application. This file doesn't do anything, but loads
@@ -16,6 +15,3 @@ define('WP_USE_THEMES', true);
 
 /** Loads the WordPress Environment and Template */
 require('./wp-blog-header.php');
-=======
-<h1>Initial INDEX page</h1>
->>>>>>> 70daa7e6e9c8889af40910fd6fb01993b998aeb7
