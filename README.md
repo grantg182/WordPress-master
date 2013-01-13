@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Installing Wordpress on Orchestra
 
 1. Fork our [orchestra-io/example-wordress repo](http://github.com/orchestra-io/example-wordpress) and clone it to your local machine. _Note: please ensure that your fork is private as you will be adding DB credentials!_
@@ -23,3 +24,7 @@
 ## Notes
 
 * Plugins, themes and updates cannot be done using Wordpress' internal system.
+=======
+WordPress-master
+================
+>>>>>>> 70daa7e6e9c8889af40910fd6fb01993b998aeb7
