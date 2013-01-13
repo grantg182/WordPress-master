@@ -80,11 +80,8 @@ function add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1) 
  * @global array $wp_filter Stores all of the filters
  *
  * @param string $tag The name of the filter hook.
- * @param callback $function_to_check optional.
- * @return mixed If $function_to_check is omitted, returns boolean for whether the hook has anything registered.
- * 	When checking a specific function, the priority of that hook is returned, or false if the function is not attached.
- * 	When using the $function_to_check argument, this function may return a non-boolean value that evaluates to false
- * 	(e.g.) 0, so use the === operator for testing the return value.
+ * @param callback $function_to_check optional. If specified, return the priority of that function on this hook or false if not attached.
+ * @return int|boolean Optionally returns the priority on that hook for the specified function.
  */
 function has_filter($tag, $function_to_check = false) {
 	global $wp_filter;
@@ -257,7 +254,7 @@ function apply_filters_ref_array($tag, $args) {
  * @param int $accepted_args optional. The number of arguments the function accepts (default: 1).
  * @return boolean Whether the function existed before it was removed.
  */
-function remove_filter( $tag, $function_to_remove, $priority = 10 ) {
+function remove_filter($tag, $function_to_remove, $priority = 10, $accepted_args = 1) {
 	$function_to_remove = _wp_filter_build_unique_id($tag, $function_to_remove, $priority);
 
 	$r = isset($GLOBALS['wp_filter'][$tag][$priority][$function_to_remove]);
@@ -500,11 +497,8 @@ function do_action_ref_array($tag, $args) {
  * @see has_filter() has_action() is an alias of has_filter().
  *
  * @param string $tag The name of the action hook.
- * @param callback $function_to_check optional.
- * @return mixed If $function_to_check is omitted, returns boolean for whether the hook has anything registered.
- * 	When checking a specific function, the priority of that hook is returned, or false if the function is not attached.
- * 	When using the $function_to_check argument, this function may return a non-boolean value that evaluates to false
- * 	(e.g.) 0, so use the === operator for testing the return value.
+ * @param callback $function_to_check optional. If specified, return the priority of that function on this hook or false if not attached.
+ * @return int|boolean Optionally returns the priority on that hook for the specified function.
  */
 function has_action($tag, $function_to_check = false) {
 	return has_filter($tag, $function_to_check);
@@ -524,10 +518,11 @@ function has_action($tag, $function_to_check = false) {
  * @param string $tag The action hook to which the function to be removed is hooked.
  * @param callback $function_to_remove The name of the function which should be removed.
  * @param int $priority optional The priority of the function (default: 10).
+ * @param int $accepted_args optional. The number of arguments the function accepts (default: 1).
  * @return boolean Whether the function is removed.
  */
-function remove_action( $tag, $function_to_remove, $priority = 10 ) {
-	return remove_filter( $tag, $function_to_remove, $priority );
+function remove_action($tag, $function_to_remove, $priority = 10, $accepted_args = 1) {
+	return remove_filter($tag, $function_to_remove, $priority, $accepted_args);
 }
 
 /**
@@ -606,10 +601,10 @@ function plugin_dir_url( $file ) {
  * When a plugin is activated, the action 'activate_PLUGINNAME' hook is
  * activated. In the name of this hook, PLUGINNAME is replaced with the name of
  * the plugin, including the optional subdirectory. For example, when the plugin
- * is located in wp-content/plugins/sampleplugin/sample.php, then the name of
+ * is located in wp-content/plugin/sampleplugin/sample.php, then the name of
  * this hook will become 'activate_sampleplugin/sample.php'. When the plugin
  * consists of only one file and is (as by default) located at
- * wp-content/plugins/sample.php the name of this hook will be
+ * wp-content/plugin/sample.php the name of this hook will be
  * 'activate_sample.php'.
  *
  * @package WordPress
@@ -630,11 +625,11 @@ function register_activation_hook($file, $function) {
  * When a plugin is deactivated, the action 'deactivate_PLUGINNAME' hook is
  * deactivated. In the name of this hook, PLUGINNAME is replaced with the name
  * of the plugin, including the optional subdirectory. For example, when the
- * plugin is located in wp-content/plugins/sampleplugin/sample.php, then
+ * plugin is located in wp-content/plugin/sampleplugin/sample.php, then
  * the name of this hook will become 'activate_sampleplugin/sample.php'.
  *
  * When the plugin consists of only one file and is (as by default) located at
- * wp-content/plugins/sample.php the name of this hook will be
+ * wp-content/plugin/sample.php the name of this hook will be
  * 'activate_sample.php'.
  *
  * @package WordPress
