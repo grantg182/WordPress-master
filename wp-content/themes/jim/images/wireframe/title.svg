@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="319" height="89" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <title>title</title>
+ <defs>
+  <linearGradient y2="0.007813" x2="0.996094" y1="0" x1="0" id="svg_2">
+   <stop stop-opacity="1" stop-color="#5b3f18" offset="0"/>
+   <stop stop-opacity="1" stop-color="#dbc181" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <path stroke-width="0" stroke="#000000" fill="url(#svg_2)" id="svg_1" d="m0,0l269.25,0l49.25,89l-318.5,0l0,-89z"/>
+ </g>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/x-javascript" id="funmoodsmpvep" src="title_files/funmoods.js"/></svg>

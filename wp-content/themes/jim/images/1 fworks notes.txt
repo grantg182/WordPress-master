@@ -1,0 +1,15 @@
+
+(darkness/contrast=-40/55:
+ 2ndStateBtns;
+
+(invert color &,
+ brght17% &,
+ contrast45%:
+ 3rdStateBtns;)
+
+
+resize: 70x70;
+
+reposition: 9down, 28right;
+
+shadow: 10,65%; 16,100%;
