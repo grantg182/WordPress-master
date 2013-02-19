@@ -45,6 +45,13 @@ jQuery(document).ready(function () {
     }
 	
 	
+	jQuery('body').delay(1500).fadeTo('1000', 0.3, function()
+    {
+        jQuery(this).css('background','#ccc');
+        jQuery(this).delay(500).css('background','').addClass('bodyBG2');
+    }).fadeTo('1000', 1);
+	
+	
 	
 	jQuery('.busSliderLoad').click(function() {
         location.reload();
