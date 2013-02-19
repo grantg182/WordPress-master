@@ -13,16 +13,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for bbPress */
-define( 'BBDB_NAME', 'wordpress' );
+define( 'BBDB_NAME', 'db_45ab2de2' );
 
 /** MySQL database username */
-define( 'BBDB_USER', 'root' );
+define( 'BBDB_USER', 'user_45ab2de2' );
 
 /** MySQL database password */
-define( 'BBDB_PASSWORD', '' );
+define( 'BBDB_PASSWORD', 'QJCPu59YnJ76ec' );
 
 /** MySQL hostname */
-define( 'BBDB_HOST', 'localhost' );
+define( 'BBDB_HOST', 'a.db.shared.orchestra.io' );
 
 /** Database Charset to use in creating database tables. */
 define( 'BBDB_CHARSET', 'utf8' );
